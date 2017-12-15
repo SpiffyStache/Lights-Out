@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC0FC9671EE756B90066A0A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0FC9661EE756B90066A0A8 /* AppDelegate.swift */; };
+		DC0FC9691EE756B90066A0A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0FC9681EE756B90066A0A8 /* ViewController.swift */; };
+		DC0FC96C1EE756B90066A0A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0FC96A1EE756B90066A0A8 /* Main.storyboard */; };
+		DC0FC96E1EE756B90066A0A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC0FC96D1EE756B90066A0A8 /* Assets.xcassets */; };
+		DC0FC9711EE756B90066A0A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC0FC96F1EE756B90066A0A8 /* LaunchScreen.storyboard */; };
+		DC3E4D2A1EEF2B480035D52E /* KataButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E4D291EEF2B480035D52E /* KataButton.swift */; };
+		DC3E4D2C1F0AC67A0035D52E /* KataInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E4D2B1F0AC67A0035D52E /* KataInt.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DC0FC9631EE756B90066A0A8 /* Lights Out Kata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lights Out Kata.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC0FC9661EE756B90066A0A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC0FC9681EE756B90066A0A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC0FC96B1EE756B90066A0A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC0FC96D1EE756B90066A0A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC0FC9701EE756B90066A0A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DC0FC9721EE756B90066A0A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC3E4D291EEF2B480035D52E /* KataButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KataButton.swift; sourceTree = "<group>"; };
+		DC3E4D2B1F0AC67A0035D52E /* KataInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KataInt.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC0FC9601EE756B90066A0A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC0FC95A1EE756B90066A0A8 = {
+			isa = PBXGroup;
+			children = (
+				DC0FC9651EE756B90066A0A8 /* Lights Out Kata */,
+				DC0FC9641EE756B90066A0A8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC0FC9641EE756B90066A0A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC0FC9631EE756B90066A0A8 /* Lights Out Kata.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC0FC9651EE756B90066A0A8 /* Lights Out Kata */ = {
+			isa = PBXGroup;
+			children = (
+				DC0FC96F1EE756B90066A0A8 /* LaunchScreen.storyboard */,
+				DC0FC96A1EE756B90066A0A8 /* Main.storyboard */,
+				DC0FC9661EE756B90066A0A8 /* AppDelegate.swift */,
+				DC0FC9681EE756B90066A0A8 /* ViewController.swift */,
+				DC3E4D291EEF2B480035D52E /* KataButton.swift */,
+				DC3E4D2B1F0AC67A0035D52E /* KataInt.swift */,
+				DC0FC96D1EE756B90066A0A8 /* Assets.xcassets */,
+				DC0FC9721EE756B90066A0A8 /* Info.plist */,
+			);
+			path = "Lights Out Kata";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC0FC9621EE756B90066A0A8 /* Lights Out Kata */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC0FC9751EE756B90066A0A8 /* Build configuration list for PBXNativeTarget "Lights Out Kata" */;
+			buildPhases = (
+				DC0FC95F1EE756B90066A0A8 /* Sources */,
+				DC0FC9601EE756B90066A0A8 /* Frameworks */,
+				DC0FC9611EE756B90066A0A8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Lights Out Kata";
+			productName = "Lights Out Kata";
+			productReference = DC0FC9631EE756B90066A0A8 /* Lights Out Kata.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC0FC95B1EE756B90066A0A8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Robbie Cravens";
+				TargetAttributes = {
+					DC0FC9621EE756B90066A0A8 = {
+						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DC0FC95E1EE756B90066A0A8 /* Build configuration list for PBXProject "Lights Out Kata" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC0FC95A1EE756B90066A0A8;
+			productRefGroup = DC0FC9641EE756B90066A0A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC0FC9621EE756B90066A0A8 /* Lights Out Kata */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC0FC9611EE756B90066A0A8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC0FC9711EE756B90066A0A8 /* LaunchScreen.storyboard in Resources */,
+				DC0FC96E1EE756B90066A0A8 /* Assets.xcassets in Resources */,
+				DC0FC96C1EE756B90066A0A8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC0FC95F1EE756B90066A0A8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC3E4D2C1F0AC67A0035D52E /* KataInt.swift in Sources */,
+				DC0FC9691EE756B90066A0A8 /* ViewController.swift in Sources */,
+				DC0FC9671EE756B90066A0A8 /* AppDelegate.swift in Sources */,
+				DC3E4D2A1EEF2B480035D52E /* KataButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DC0FC96A1EE756B90066A0A8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC0FC96B1EE756B90066A0A8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DC0FC96F1EE756B90066A0A8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC0FC9701EE756B90066A0A8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC0FC9731EE756B90066A0A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC0FC9741EE756B90066A0A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC0FC9761EE756B90066A0A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Lights Out Kata/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robbieRobbie.Lights-Out-Kata";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC0FC9771EE756B90066A0A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Lights Out Kata/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robbieRobbie.Lights-Out-Kata";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC0FC95E1EE756B90066A0A8 /* Build configuration list for PBXProject "Lights Out Kata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC0FC9731EE756B90066A0A8 /* Debug */,
+				DC0FC9741EE756B90066A0A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC0FC9751EE756B90066A0A8 /* Build configuration list for PBXNativeTarget "Lights Out Kata" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC0FC9761EE756B90066A0A8 /* Debug */,
+				DC0FC9771EE756B90066A0A8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC0FC95B1EE756B90066A0A8 /* Project object */;
+}
