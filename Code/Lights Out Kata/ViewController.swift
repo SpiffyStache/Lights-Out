@@ -8,9 +8,6 @@
 
 import UIKit
 
-var rows = 5
-var columns = 5
-
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var gridView: UIView!
     @IBOutlet weak var mySwitch: UISwitch!
@@ -19,22 +16,51 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var columnsTextField: UITextField!
     @IBOutlet weak var rowsTextField: UITextField!
     
-    var touches = [String]()
-    var numOfSolutionTouches = Int()
+    private var touches = [String]()
+    private var numOfSolutionTouches = Int()
+    
+    private var rows = 5
+    private var columns = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hideKeyboardWhenBackgroundTouched()
+        createButtons()
+        
+        self.touches.append("User Touched:")
+    }
+
+    private func hideKeyboardWhenBackgroundTouched() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.hideKeyboardPressed(_:)))
         gridView.addGestureRecognizer(tapGestureRecognizer)
-
-        createButtons()
-        self.touches.append("User Touched:")
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        layoutButtons()
+    }
+    
+    private func createButtons() {
+        for row in 0..<rows {
+            for column in 0..<columns {
+                createButton(row: row, column: column)
+            }
+        }
+        view.setNeedsLayout()
+    }
+    
+    private func createButton(row: Int, column: Int) {
+        let button = KataButton(frame: CGRect.null)
+        button.addTarget(self, action:#selector(gridButtonTouched(sender:)), for: .touchUpInside)
+        gridView.addSubview(button)
+        button.layer.cornerRadius = 14;
+        button.clipsToBounds = true
         
+        UIButtonsView.layer.cornerRadius = 25
+    }
+    
+    private func layoutButtons() {
         let buttonSize = 28
         let buttonGap = 4
         let xOffset = (gridView.frame.size.width / 2) - CGFloat(((buttonSize + buttonGap) * columns - buttonGap) / 2)
@@ -46,28 +72,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             }
         }
     }
-    func createButtons() {
-        for row in 0..<rows {
-            for column in 0..<columns {
-                createButton(row: row, column: column)
-            }
-        }
-        view.setNeedsLayout()
-    }
-    
-    func createButton(row: Int, column: Int) {
-        let button = KataButton(frame: CGRect.null)
-        button.addTarget(self, action:#selector(gridButtonTouched(sender:)), for: .touchUpInside)
-        gridView.addSubview(button)
-        button.layer.cornerRadius = 14;
-        button.clipsToBounds = true
-        
-        UIButtonsView.layer.cornerRadius = 25
-    }
     
     @IBAction func rowsChanged(_ sender: UITextField) {
         let rowsText = sender.text!
-        if rowsText.characters.count == 0 {
+        if rowsText.count == 0 {
             return
         }
         
@@ -80,7 +88,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             sender.text = String(rowsText.characters.dropLast())
             
             let alert = UIAlertController(title: "Tip", message: "Input a value of 10 or lower", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
         }
@@ -88,7 +96,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         rows = rowsCount!
         gridView.subviews.forEach { $0.removeFromSuperview() }
         createButtons()
-
     }
     
     @IBAction func columnsChanged(_ sender: UITextField) {
@@ -106,7 +113,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             sender.text = String(columnsText.characters.dropLast())
             
             let alert = UIAlertController(title: "Tip", message: "Input a value of 10 or lower", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
         }
@@ -186,7 +193,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    //
     func solveHard() {
+        self.touches.removeAll()
         self.touches.append("Solution:")
 
         for row in 0..<rows {
@@ -205,9 +214,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             
             solveEasy()
             if isClear() {
-                
                 let solutionAlert = UIAlertController(title: "Results:", message: "\(touches)", preferredStyle: UIAlertControllerStyle.alert)
-                solutionAlert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                solutionAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(solutionAlert, animated: true, completion: nil)
                 self.touches.removeAll()
                 self.touches.append("User Touched:")
@@ -223,7 +231,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         let canNotSolveAlert = UIAlertController(title: "Alert", message: "This Pattern Can Not Be Solved", preferredStyle: UIAlertControllerStyle.alert)
-        canNotSolveAlert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        canNotSolveAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(canNotSolveAlert, animated: true, completion: nil)
         self.touches.removeAll()
         self.touches.append("User Touched:")
@@ -231,7 +239,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func solveEasy() {
-        
         for row in 1..<rows {
             for column in 0..<columns {
                 let buttonAboveUs = buttonAt(row: row - 1, column: column)
