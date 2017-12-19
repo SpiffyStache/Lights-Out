@@ -28,9 +28,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         hideKeyboardWhenBackgroundTouched()
         createButtons()
         
-        self.touches.append("User Touched:")
     }
-
+    
+    //allows for the user to more easily input digits into the rows and columns text fields
     private func hideKeyboardWhenBackgroundTouched() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.hideKeyboardPressed(_:)))
         gridView.addGestureRecognizer(tapGestureRecognizer)
@@ -50,6 +50,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         view.setNeedsLayout()
     }
     
+    //spawns buttons
     private func createButton(row: Int, column: Int) {
         let button = KataButton(frame: CGRect.null)
         button.addTarget(self, action:#selector(gridButtonTouched(sender:)), for: .touchUpInside)
@@ -60,6 +61,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         UIButtonsView.layer.cornerRadius = 25
     }
     
+    //defines specifications for buttons
     private func layoutButtons() {
         let buttonSize = 28
         let buttonGap = 4
@@ -185,16 +187,16 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func solveButton(_ sender: Any) {
         if mySwitch.isOn {
-            solveHard()
+            bruteForceTopRow()
         } else {
             mySwitch.setOn(true, animated: true)
             switchLabel.text = "Mode: Plus"
-            solveHard()
+            bruteForceTopRow()
         }
     }
     
-    //
-    func solveHard() {
+    //tap every combination of dots in the top row sequentially
+    func bruteForceTopRow() {
         self.touches.removeAll()
         self.touches.append("Solution:")
 
@@ -212,13 +214,12 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 }
             }
             
-            solveEasy()
+            clickBelowAlgorithm()
             if isClear() {
                 let solutionAlert = UIAlertController(title: "Results:", message: "\(touches)", preferredStyle: UIAlertControllerStyle.alert)
                 solutionAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(solutionAlert, animated: true, completion: nil)
                 self.touches.removeAll()
-                self.touches.append("User Touched:")
                 return
             }
             
@@ -234,11 +235,11 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         canNotSolveAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(canNotSolveAlert, animated: true, completion: nil)
         self.touches.removeAll()
-        self.touches.append("User Touched:")
         print("-1")
     }
     
-    func solveEasy() {
+    //tap one dot below each existing dot until there are no dots left that can be taped underneath of
+    func clickBelowAlgorithm() {
         for row in 1..<rows {
             for column in 0..<columns {
                 let buttonAboveUs = buttonAt(row: row - 1, column: column)
@@ -250,6 +251,9 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    //if no dots remain display an alert with the solution
+    //if dots remain attempt the next possible combination of top row dots
+    //if all dot combinations have been attempted display an alert showing that there is no solution
     func isClear() -> Bool {
         for row in 0..<rows {
             for column in 0..<columns {
